@@ -21,12 +21,7 @@ add it to the NgModules array.
 
 ### Things to look Up:
 * What is the meaning of the different syntax for different types of bindings?
-** A * prefix for conditionals like *ngIf, *ngFor?
-** () surrounding events like 'click'?
-** [] for binding a class based on an expression?
-
- 
-
- 
-
-
+    * A * prefix for conditionals like *ngIf, *ngFor?
+    * () surrounding events like 'click'?
+    * [] for binding a class based on an expression?
+    
