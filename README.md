@@ -24,4 +24,10 @@ add it to the NgModules array.
     * A * prefix for conditionals like *ngIf, *ngFor?
     * () surrounding events like 'click'?
     * [] for binding a class based on an expression?
-    
+
+## Master/Detail Component
+* Seperated the hero-detail from the hero component by using the CLI to generate a new component.
+* Cut the hero-detail portion of the template from the Heroes template and pastedit in the newly generated heroes-deatil template.
+* Added the import module of the angualr core to the heroes-detail module.
+* Added the @Input decorator to the hero-detail class to add a input property to the heroes-detail class. This allows the parent component to send inputs to the child components via one-way binding.
+* Updated the heroes-detail template to use that comonent's hero property instead of the selected hero property of the parent class.
