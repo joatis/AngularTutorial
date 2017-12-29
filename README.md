@@ -31,3 +31,33 @@ add it to the NgModules array.
 * Added the import module of the angular core to the heroes-detail module.
 * Added the @Input decorator to the hero-detail class to add a input property to the heroes-detail class. This allows the parent component to send inputs to the child components via one-way binding.
 * Updated the heroes-detail template to use that comonent's hero property instead of the selected hero property of the parent class.
+
+## Services
+Services are singletons that get instantiated on start up and are shared by components, modules and apps through injection.
+
+Services can be created using the 'ng create service <service name>' This creates the files <name>.service, <name>.service.ts, <name>.service.spec.ts in the app directory.
+
+Services can be provided in the sub-component, root-component and module level. It is customary to provide it at the module level. This is why the CLI has a --module=app option when creating a service.
+
+### Providers Array 
+By adding the service name to the providers: array in app.module.ts a single instance of the service is created and injected into any class of the app that asks for it.
+
+### Injecting Services Into Components
+Instead of importing services, they are injected. Injecting them is as easy as passing the service as a parameter to the components constructor signature:
+`constructor(private heroService: HeroService) { } 
+
+### Calling it on ngOnInit
+Calling a service in the constructor is not good practice. Constructors should not *do* anything. Constructors should only assign properties to parameters. Instead you should create a wrapper function that calls the service. This wrapper function should be called in the ngOnInit() function. 
+
+### Observable Data
+When you make a call to a service you don't want stop execution, waiting to return so you want to make sure that the call is asynchronous (returning a promise, callback or observable.) By default the ng HTTP service returns an observable.
+
+In the sub component you call the subscribe method on the returned value. When the service is finished the result can be assigned to the classes property. 
+* The Observable class is from the RxJS/Observable library
+* of() from 'rxjs/observable/of' allows you mock getting data from a server.
+
+
+### Message Service
+In the tutorial they used the Message Service to show how often services are injeced into other services. 
+  
+
